@@ -43,6 +43,11 @@ public class GreetingServlet extends HttpServlet {
         out.println("</html>");
     }
 
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        doGet(req, resp);
+    }
+
     // Simple HTML escaping so special characters don't break the page
     private String escapeHtml(String s) {
         return s.replace("&", "&amp;")
