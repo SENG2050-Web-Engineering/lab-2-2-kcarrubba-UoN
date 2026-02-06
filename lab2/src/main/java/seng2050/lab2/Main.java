@@ -38,6 +38,12 @@ public class Main {
     // Map the servlet
     ctx.addServletMappingDecoded("/HelloWorld", "HelloWorldServlet");
 
+    // Add Simple Message servlet
+    tomcat.addServlet("", "SimpleMessage", new SimpleMessage());
+
+    // Map the Simple Message servlet
+    ctx.addServletMappingDecoded("/SimpleMessage", "SimpleMessage");
+
     // Start Tomcat
     try {
       tomcat.getConnector();
