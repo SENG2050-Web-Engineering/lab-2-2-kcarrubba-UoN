@@ -50,6 +50,11 @@ public class Main {
     // Map the Generate HTML servlet
     ctx.addServletMappingDecoded("/GenerateValidHTML", "GenerateValidHTML");
 
+    // Map Greeting servlet
+    tomcat.addServlet("", "GreetingServlet", new GreetingServlet());
+
+    // Map the Greeting servlet
+    ctx.addServletMappingDecoded("/GreetingServlet", "GreetingServlet");
 
     // Start Tomcat
     try {
